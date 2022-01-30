@@ -6,6 +6,8 @@ import lombok.RequiredArgsConstructor;
 import org.apache.ibatis.session.SqlSessionFactory;
 import org.springframework.stereotype.Service;
 
+import java.util.List;
+
 @Service
 @RequiredArgsConstructor
 public class CosService {
@@ -15,5 +17,9 @@ public class CosService {
 
     public CosmeticDto findCos(Long seq){
         return cosMapper.findById(seq);
+    }
+
+    public List<CosmeticDto> findAll() {
+        return cosMapper.findAll();
     }
 }

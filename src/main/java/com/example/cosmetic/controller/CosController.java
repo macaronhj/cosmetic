@@ -5,6 +5,7 @@ import com.example.cosmetic.service.CosService;
 import lombok.RequiredArgsConstructor;
 import lombok.extern.slf4j.Slf4j;
 import org.springframework.stereotype.Controller;
+import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.*;
 import org.springframework.web.servlet.ModelAndView;
 
@@ -36,6 +37,13 @@ public class CosController {
     public ModelAndView requestPage(ModelAndView mv){
         log.info("CosController > requestPage 화장품 등록 페이지 이동 중 요청");
         mv.setViewName("request.html");
+        return mv;
+    }
+    @GetMapping(value="findAll")
+    public ModelAndView findAll(ModelAndView mv){
+        log.info("CosController > findAll 사용자 리스트 요청 시작!!");
+        mv.addObject("cosList", cosService.findAll());
+        mv.setViewName("resultTable.html");
         return mv;
     }
 }
