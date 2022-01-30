@@ -5,8 +5,7 @@ import com.example.cosmetic.service.CosService;
 import lombok.RequiredArgsConstructor;
 import lombok.extern.slf4j.Slf4j;
 import org.springframework.stereotype.Controller;
-import org.springframework.web.bind.annotation.RequestMapping;
-import org.springframework.web.bind.annotation.RequestMethod;
+import org.springframework.web.bind.annotation.*;
 import org.springframework.web.servlet.ModelAndView;
 
 @Controller
@@ -31,6 +30,12 @@ public class CosController {
 
         mv.addObject("msg", "post 전송 성공");
         mv.setViewName("test3.html");
+        return mv;
+    }
+    @GetMapping(value = "/")
+    public ModelAndView requestPage(ModelAndView mv){
+        log.info("CosController > requestPage 화장품 등록 페이지 이동 중 요청");
+        mv.setViewName("request.html");
         return mv;
     }
 }

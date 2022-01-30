@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="ko"
+      xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:th="http://www.thymeleaf.org"
+>
+<head>
+    <meta charset="UTF-8">
+    <title>Request Page</title>
+    <style>
+        table {width:50%}
+        table, th, td {border:4px solid black;
+            border-collapse: collapse; padding:10px; }
+        body{background-color: MediumSeaGreen; pacity: 0.3;}
+    </style>
+</head>
+<body>
+<center>
+    <h1>화장품 등록 페이지 입니다!</h1>
+<br>
+    <h3>화장품 등록 요청</h3>
+    <form name="frm" action="/createCos" method="post">
+    <p>
+    <table>
+        <tr>
+            <td><label for="NAME" class="sr-only">NAME</label></td>
+            <td><input type="text" id="name" name="NAME" class="form-control" placeholder="NAME" required autofocus></td>
+        </tr>
+        <tr>
+            <td><label for="COMPANY" class="sr-only">COMPANY</label></td>
+            <td><input type="text" id="company" name="COMPANY" class="form-control" placeholder="COMPANY" required autofocus></td>
+        </tr>
+        <tr>
+            <td><label for="SALE" class="sr-only">SALE</label></td>
+            <td><input type="text" id="sale" name="SALE" class="form-control" placeholder="SALE" required></td>
+        </tr>
+        <tr>
+            <td colspan="2" align="center"><button name="btn" type="submit" id="btnId">등록 버튼</button></td>
+        </tr>
+    </table>
+    </p>
+    </form>
+</center>
+</body>
+</html>
