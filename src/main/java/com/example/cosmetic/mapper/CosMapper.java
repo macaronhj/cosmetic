@@ -20,6 +20,6 @@ public interface CosMapper {
     @Insert("INSERT INTO COSMETIC(SEQ, NAME, COUNT, COMPANY, SALE) VALUES (SEQ.NEXTVAL,#{NAME},0,#{COMPANY},#{SALE})")
     int registerCos(RegisterDto registerDto);
 
-    @Insert("INSERT INTO COSMETIC(SEQ, NAME, COUNT, COMPANY, SALE) VALUES (SEQ.NEXTVAL,#{name},0,#{company},#{sale})")
-    int createCos(String name, String company, Long sale);
+    @Insert("INSERT INTO COSMETIC(SEQ, NAME, COUNT, COMPANY, SALE) VALUES (SEQ.NEXTVAL,#{name},#{count},#{company},#{sale})")
+    int createCos(String name, int count, String company, Long sale);
 }

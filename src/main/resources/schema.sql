@@ -6,6 +6,7 @@ create table COSMETIC(
      SALE NUMBER(10)constraint MSALE_NN not null
 );
 
+
 create sequence SEQ increment by 1 start with 1 nocache;
 
 insert into cosmetic values(SEQ.NEXTVAL,'튤립',30,'아모레',12000);

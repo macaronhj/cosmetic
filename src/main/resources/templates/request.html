@@ -15,30 +15,38 @@
 </head>
 <body>
 <center>
-    <h1>화장품 등록 페이지 입니다!</h1>
+<h1>화장품 등록 페이지 입니다!</h1>
 <br>
-    <h3>화장품 등록 요청</h3>
-    <form name="frm" action="/createCos" method="post">
-    <p>
-    <table>
-        <tr>
-            <td><label for="name" class="sr-only">NAME</label></td>
-            <td><input type="text" id="name" name="name" class="form-control" placeholder="name" required autofocus></td>
-        </tr>
-        <tr>
-            <td><label for="company" class="sr-only">COMPANY</label></td>
-            <td><input type="text" id="company" name="company" class="form-control" placeholder="company" required autofocus></td>
-        </tr>
-        <tr>
-            <td><label for="sale" class="sr-only">SALE</label></td>
-            <td><input type="text" id="sale" name="sale" class="form-control" placeholder="sale" required></td>
-        </tr>
-        <tr>
-            <td colspan="2" align="center"><button name="btn" type="submit" id="btnId">등록 버튼</button></td>
-        </tr>
-    </table>
-    </p>
-    </form>
+<h3>화장품 등록 요청</h3>
+<form name="frm" action="/createCos" method="post">
+<p>
+<table>
+    <tr>
+        <td><label for="name" class="sr-only">NAME</label></td>
+        <td><input type="text" id="name" name="name" class="form-control" placeholder="name" required autofocus></td>
+    </tr>
+    <tr>
+        <td><label for="count" class="sr-only">COUNT</label></td>
+        <td><input type="text" id="count" name="count" class="form-control" placeholder="count" required></td>
+    </tr>
+    <tr>
+        <td><label for="company" class="sr-only">COMPANY</label></td>
+        <td><input type="text" id="company" name="company" class="form-control" placeholder="company" required autofocus></td>
+    </tr>
+    <tr>
+        <td><label for="sale" class="sr-only">SALE</label></td>
+        <td><input type="text" id="sale" name="sale" class="form-control" placeholder="sale" required></td>
+    </tr>
+    <tr>
+        <td colspan="2" align="center"><button name="btn" type="submit" id="btnId">등록 버튼</button></td>
+    </tr>
+</table>
+</p>
+</form>
+<h3>화장품 전체 리스트 출력을 원하시면 아래 버튼을 눌러주세요~</h3>
+<form name="frm" action="/findAll" method="get">
+    <button name="btnFinAll" type="submit" id="btnFinAll"><img src="C:\heejin\img\start.png"></button>
+</form>
 </center>
 </body>
 </html>

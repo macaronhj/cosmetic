@@ -16,10 +16,10 @@ public class ManageController {
     private final ManageService manageService;
 
     @PostMapping(value = "/createCos")
-    public ModelAndView createCos(ModelAndView mv, String name, String company, Long sale){
+    public ModelAndView createCos(ModelAndView mv, String name, int count, String company, Long sale){
         log.info("ManageController > createCos 사용자 등록 요청 시작");
 
-        mv.addObject("result", manageService.createCos(name, company, sale));
+        mv.addObject("result", manageService.createCos(name, count, company, sale));
         mv.setViewName("result.html");
         return mv;
     }
