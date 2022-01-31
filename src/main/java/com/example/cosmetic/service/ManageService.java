@@ -11,26 +11,14 @@ import org.springframework.stereotype.Service;
 @Slf4j
 public class ManageService {
     private final CosMapper cosMapper;
-    public String createCos(String name, int count, String company ,Long sale){
+    public String createCos(String name, int count, String company ,Long sale) {
         int result = cosMapper.createCos(name, count, company, sale);
         String registerResult = "화장품 등록 실패";
 
-        if(result > 0){
+        if (result > 0) {
             registerResult = "화장품 등록 완료!!!";
             log.info("ManageService > registerCos 화장품 등록 요청 성공");
         }
-        return registerResult;
-    }
-    public String registerUser(RegisterDto registerDto) {
-        // 사용자 정보 insert
-        int result = cosMapper.registerCos(registerDto);
-        String registerResult = "회원 등록 실패";
-
-        if (result > 0) {
-            registerResult = "회원 등록 성공";
-            log.info("[ ManageService > registerUser 사용자 등록 요청 성공]");
-        }
-
         return registerResult;
     }
 }

@@ -16,19 +16,10 @@ public class ManageController {
     private final ManageService manageService;
 
     @PostMapping(value = "/createCos")
-    public ModelAndView createCos(ModelAndView mv, String name, int count, String company, Long sale){
+    public ModelAndView createCos(ModelAndView mv, String name, int count, String company, Long sale) {
         log.info("ManageController > createCos 사용자 등록 요청 시작");
 
         mv.addObject("result", manageService.createCos(name, count, company, sale));
-        mv.setViewName("result.html");
-        return mv;
-    }
-    @PostMapping(value = "/registerCos")
-    public ModelAndView registerCos(@RequestBody RegisterDto registerDto, ModelAndView mv) {
-        log.info("[ UserController > registerUser 사용자 등록 요청 시작]");
-
-        // 사용자 등록 business 로직 실행 후 결과 바로 받아 모델에 담는다.
-        mv.addObject("result",manageService.registerUser(registerDto));
         mv.setViewName("result.html");
         return mv;
     }

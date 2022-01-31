@@ -45,4 +45,10 @@ public class CosController {
         mv.setViewName("resultTable.html");
         return mv;
     }
+    @GetMapping(value = "/store")
+    public ModelAndView requestStore(ModelAndView mv){
+        log.info("CosController > requestStore 매장 등록 페이지 이동 중 요청");
+        mv.setViewName("requestStore.html");
+        return mv;
+    }
 }
