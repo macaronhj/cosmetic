@@ -1,6 +1,5 @@
 package com.example.cosmetic.service;
 
-import com.example.cosmetic.dto.RegisterDto;
 import com.example.cosmetic.mapper.CosMapper;
 import lombok.RequiredArgsConstructor;
 import lombok.extern.slf4j.Slf4j;

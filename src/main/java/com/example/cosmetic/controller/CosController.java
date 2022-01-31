@@ -2,6 +2,7 @@ package com.example.cosmetic.controller;
 
 import com.example.cosmetic.dto.CosmeticDto;
 import com.example.cosmetic.service.CosService;
+import com.example.cosmetic.service.StoreService;
 import lombok.RequiredArgsConstructor;
 import lombok.extern.slf4j.Slf4j;
 import org.springframework.stereotype.Controller;
@@ -15,6 +16,7 @@ import org.springframework.web.servlet.ModelAndView;
 public class CosController {
 
     private final CosService cosService;
+    private final StoreService storeService;
 
     @RequestMapping(value = "/findCos" , method = RequestMethod.GET)
     public ModelAndView list(ModelAndView mv, Long seq){
@@ -49,6 +51,13 @@ public class CosController {
     public ModelAndView requestStore(ModelAndView mv){
         log.info("CosController > requestStore 매장 등록 페이지 이동 중 요청");
         mv.setViewName("requestStore.html");
+        return mv;
+    }
+    @GetMapping(value="findCosAll")
+    public ModelAndView findCosAll(ModelAndView mv){
+        log.info("CosController > findCosAll 사용자 리스트 요청 시작!!");
+        mv.addObject("storeList", storeService.findCosAll());
+        mv.setViewName("StoreTable.html");
         return mv;
     }
 }

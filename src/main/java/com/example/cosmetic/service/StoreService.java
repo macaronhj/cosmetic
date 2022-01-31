@@ -1,11 +1,13 @@
 package com.example.cosmetic.service;
 
+import com.example.cosmetic.dto.StoreDto;
 import com.example.cosmetic.mapper.StoreMapper;
 import lombok.RequiredArgsConstructor;
 import lombok.extern.slf4j.Slf4j;
 import org.springframework.stereotype.Service;
 
 import java.util.Date;
+import java.util.List;
 
 @Service
 @RequiredArgsConstructor
@@ -23,6 +25,8 @@ public class StoreService {
         }
         return registerResultS;
     }
-
+    public List<StoreDto> findCosAll() {
+        return storeMapper.findCosAll();
+    }
 }
 
