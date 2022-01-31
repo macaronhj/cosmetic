@@ -16,11 +16,10 @@ public class CosController {
 
     private final CosService cosService;
 
-    @RequestMapping(value = "/list" , method = RequestMethod.GET)
-
+    @RequestMapping(value = "/findCos" , method = RequestMethod.GET)
     public ModelAndView list(ModelAndView mv, Long seq){
         CosmeticDto cosDto = cosService.findCos(seq);
-        log.info("로그으으으");
+        log.info("해당 화장품 상품명, 가격 조회 완료!");
         mv.addObject("name", cosDto.getName());
         mv.addObject("sale", cosDto.getSale());
         mv.setViewName("findcos.html");
