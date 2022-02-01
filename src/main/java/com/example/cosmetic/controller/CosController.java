@@ -17,7 +17,6 @@ import org.springframework.web.servlet.ModelAndView;
 public class CosController {
 
     private final CosService cosService;
-    private final StoreService storeService;
 
     @RequestMapping(value = "/findCos" , method = RequestMethod.GET)
     public ModelAndView list(ModelAndView mv, Long seq){
@@ -42,32 +41,10 @@ public class CosController {
         return mv;
     }
     @GetMapping(value="findAll")
-    public ModelAndView findAll(ModelAndView mv){
+    public ModelAndView findAll(ModelAndView mv) {
         log.info("CosController > findAll 사용자 리스트 요청 시작!!");
         mv.addObject("cosList", cosService.findAll());
         mv.setViewName("resultTable.html");
-        return mv;
-    }
-    @GetMapping(value = "/store")
-    public ModelAndView requestStore(ModelAndView mv){
-        log.info("CosController > requestStore 매장 등록 페이지 이동 중 요청");
-        mv.setViewName("requestStore.html");
-        return mv;
-    }
-    @RequestMapping(value = "/findStore" , method = RequestMethod.GET)
-    public ModelAndView findStore(ModelAndView mv, Long s_seq){
-        StoreDto storeDto = storeService.findStore(s_seq);
-        log.info("해당 매장 매장명, 매장 위치 조회 완료!");
-        mv.addObject("name", storeDto.getName());
-        mv.addObject("location", storeDto.getLocation());
-        mv.setViewName("findStore.html");
-        return mv;
-    }
-    @GetMapping(value="findCosAll")
-    public ModelAndView findCosAll(ModelAndView mv){
-        log.info("CosController > findCosAll 사용자 리스트 요청 시작!!");
-        mv.addObject("storeList", storeService.findCosAll());
-        mv.setViewName("StoreTable.html");
         return mv;
     }
 }

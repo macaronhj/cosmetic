@@ -26,11 +26,11 @@
     </tr>
     <!-- tr th:each : 행 반복문을 수행하겠다는 의미입니다 [여러 데이터 출력] -->
     <tr th:each="list : ${cosList}">
-        <td><span th:text="${list.seq}"></span></td>
-        <td><span th:text="${list.name}"></span></td>
-        <td><span th:text="${list.count}"></span></td>
-        <td><span th:text="${list.company}"></span></td>
-        <td><span th:text="${list.sale}"></span></td>
+        <td align="center"><span th:text="${list.seq}"></span></td>
+        <td align="center"><span th:text="${list.name}"></span></td>
+        <td align="center"><span th:text="${list.count}"></span></td>
+        <td align="center"><span th:text="${list.company}"></span></td>
+        <td align="center"><span th:text="${list.sale}"></span></td>
     </tr>
 </table>
 </center>
