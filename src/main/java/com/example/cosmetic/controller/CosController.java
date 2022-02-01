@@ -1,6 +1,7 @@
 package com.example.cosmetic.controller;
 
 import com.example.cosmetic.dto.CosmeticDto;
+import com.example.cosmetic.dto.StoreDto;
 import com.example.cosmetic.service.CosService;
 import com.example.cosmetic.service.StoreService;
 import lombok.RequiredArgsConstructor;
@@ -51,6 +52,15 @@ public class CosController {
     public ModelAndView requestStore(ModelAndView mv){
         log.info("CosController > requestStore 매장 등록 페이지 이동 중 요청");
         mv.setViewName("requestStore.html");
+        return mv;
+    }
+    @RequestMapping(value = "/findStore" , method = RequestMethod.GET)
+    public ModelAndView findStore(ModelAndView mv, Long s_seq){
+        StoreDto storeDto = storeService.findStore(s_seq);
+        log.info("해당 매장 매장명, 매장 위치 조회 완료!");
+        mv.addObject("name", storeDto.getName());
+        mv.addObject("location", storeDto.getLocation());
+        mv.setViewName("findStore.html");
         return mv;
     }
     @GetMapping(value="findCosAll")

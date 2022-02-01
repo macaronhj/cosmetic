@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="ko"
+      xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:th="http://www.thymeleaf.org"
+>
+<head>
+    <meta charset="UTF-8">
+    <title>FindCos</title>
+    <style>
+        table {width:50%}
+        table, th, td {border:4px solid black;
+            border-collapse: collapse; padding:10px; }
+        body{background-color: MediumSeaGreen; pacity: 0.3;}
+    </style>
+</head>
+<body>
+<center>
+    <form name="frm" action="/PostDemo" method="post">
+        <h1>Store's Information</h1>
+        <p>
+        <table>
+            <tr>
+                <th>매장명</th> <!--table head-->
+                <th>매장위치</th>
+            </tr><!--table row-->
+            <tr>
+                <td th:text="${name}"></td> <!--table data-->
+                <td th:text="${location}"></td>
+            </tr>
+            <tr>
+                <td colspan="2" align="center">해당 매장 조회 완료!</td>
+            </tr>
+        </table>
+        </p>
+    </form>
+</center>
+</body>
+</html>

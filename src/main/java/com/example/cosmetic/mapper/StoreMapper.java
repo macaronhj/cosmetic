@@ -17,4 +17,6 @@ public interface StoreMapper {
     @Select("SELECT * FROM STORE")
     List<StoreDto> findCosAll();
 
+    @Select("SELECT * FROM STORE where s_seq = #{s_seq}")
+    StoreDto findById(Long s_seq);
 }

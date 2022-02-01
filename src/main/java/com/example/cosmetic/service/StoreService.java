@@ -1,5 +1,6 @@
 package com.example.cosmetic.service;
 
+import com.example.cosmetic.dto.CosmeticDto;
 import com.example.cosmetic.dto.StoreDto;
 import com.example.cosmetic.mapper.StoreMapper;
 import lombok.RequiredArgsConstructor;
@@ -28,5 +29,9 @@ public class StoreService {
     public List<StoreDto> findCosAll() {
         return storeMapper.findCosAll();
     }
+    public StoreDto findStore(Long s_seq){
+        return storeMapper.findById(s_seq);
+    }
+
 }
 
