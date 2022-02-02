@@ -3,57 +3,45 @@
 <head>
     <meta charset="UTF-8">
     <title>Title</title>
+    <link href="/bootstrap/css/bootstrap.min.css" rel="stylesheet">
+    <link href="/css/cheatsheet.css" rel="stylesheet">
 </head>
+<script>
+    function doregisterpage(){
+        document.frm.submit();
+    }
+</script>
 <body>
 <div>
     <div class="bd-example">
-        <form class="row g-3">
+        <form class="row g-3" name="frm" action="/registerRequest" method="post">
             <div class="col-md-4">
-                <label for="validationServer01" class="form-label">heejinFirst name</label>
-                <input type="text" class="form-control is-valid" id="validationServer01" value="Mark" required>
+                <label for="validationServer01" class="form-label">NAME</label>
+                <input type="text" class="form-control is-valid" name="name" id="validationServer01" placeholder="name" required>
+
                 <div class="valid-feedback">
                     Looks good!
                 </div>
             </div>
             <div class="col-md-4">
-                <label for="validationServer02" class="form-label">Last name</label>
-                <input type="text" class="form-control is-valid" id="validationServer02" value="Otto" required>
+                <label for="validationServer02" class="form-label">COUNT</label>
+                <input type="text" class="form-control is-valid" name="count" id="validationServer02" placeholder="count" required>
                 <div class="valid-feedback">
                     Looks good!
                 </div>
             </div>
             <div class="col-md-4">
-                <label for="validationServerUsername" class="form-label">Username</label>
-                <div class="input-group has-validation">
-                    <span class="input-group-text" id="inputGroupPrepend3">@</span>
-                    <input type="text" class="form-control is-invalid" id="validationServerUsername" aria-describedby="inputGroupPrepend3" required>
+                <label for="validationServerUsername" class="form-label">COMPANY</label>
+                    <input type="text" class="form-control is-invalid" name="company" id="validationServerUsername" placeholder="company" aria-describedby="inputGroupPrepend3" required>
                     <div class="invalid-feedback">
-                        Please choose a username.
-                    </div>
+                        Please write a company.
                 </div>
             </div>
             <div class="col-md-6">
-                <label for="validationServer03" class="form-label">City</label>
-                <input type="text" class="form-control is-invalid" id="validationServer03" required>
+                <label for="validationServer03" class="form-label">SALE</label>
+                <input type="text" class="form-control is-invalid" name="sale" id="validationServer03"  placeholder="sale" required>
                 <div class="invalid-feedback">
-                    Please provide a valid city.
-                </div>
-            </div>
-            <div class="col-md-3">
-                <label for="validationServer04" class="form-label">State</label>
-                <select class="form-select is-invalid" id="validationServer04" required>
-                    <option selected disabled value="">Choose...</option>
-                    <option>...</option>
-                </select>
-                <div class="invalid-feedback">
-                    Please select a valid state.
-                </div>
-            </div>
-            <div class="col-md-3">
-                <label for="validationServer05" class="form-label">Zip</label>
-                <input type="text" class="form-control is-invalid" id="validationServer05" required>
-                <div class="invalid-feedback">
-                    Please provide a valid zip.
+                    Please write a cosmetic's sale.
                 </div>
             </div>
             <div class="col-12">
@@ -68,10 +56,12 @@
                 </div>
             </div>
             <div class="col-12">
-                <button class="btn btn-primary" type="submit">Submit form</button>
+                <button class="btn btn-primary" type="button" onclick="doregisterpage();">Submit form</button>
             </div>
         </form>
     </div>
 </div>
+<script src="/bootstrap/js/bootstrap.bundle.min.js"></script>
+<script src="/js/cheatsheet.js"></script>
 </body>
 </html>

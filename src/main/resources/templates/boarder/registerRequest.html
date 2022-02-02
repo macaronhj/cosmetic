@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html lang="ko"
+      xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:th="http://www.thymeleaf.org"
+>
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <style>
+        body{background-image: url("https://www.urbanbrush.net/web/wp-content/uploads/edd/2019/03/urbanbrush-20190311122224766987.png");
+            background-repeat: no-repeat;
+            background-size: 900px 960px;
+        }
+    </style>
+</head>
+<body>
+<center>
+    <form name="frm" action="/PostDemo" method="post">
+        <h1 th:text="${result}"></h1>
+        <br>
+</center>
+</form>
+</body>
+</html>

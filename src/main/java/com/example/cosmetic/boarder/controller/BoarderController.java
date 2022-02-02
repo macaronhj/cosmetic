@@ -5,6 +5,7 @@ import lombok.RequiredArgsConstructor;
 import lombok.extern.slf4j.Slf4j;
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.GetMapping;
+import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.servlet.ModelAndView;
 
 @Controller
@@ -24,6 +25,14 @@ public class BoarderController {
     public ModelAndView boarderRequest(ModelAndView mv){
         log.info("BoarderController > boarderRequest 화장품 등록 페이지 이동 중 요청");
         mv.setViewName("/boarder/boarderRequest.html");
+        return mv;
+    }
+    @PostMapping(value = "/registerRequest")
+    public ModelAndView registerRequest(ModelAndView mv, String name, int count, String company, Long sale) {
+        log.info("BoarderController > registerRequest 사용자 등록 요청 시작");
+
+        mv.addObject("result", boarderService.registerRequest(name, count, company, sale));
+        mv.setViewName("/boarder/registerRequest.html");
         return mv;
     }
 }
