@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="ko"
+      xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:th="http://www.thymeleaf.org"
+>
+<head>
+    <meta charset="UTF-8">
+    <title>Request Page</title>
+    <style>
+        table {width:50%}
+        table, th, td {border:4px solid black;
+            border-collapse: collapse; padding:10px; }
+        body{background-color: MediumSeaGreen; pacity: 0.3;}
+    </style>
+</head>
+<body>
+<center>
+    <h1>화장품 금액별 조회 페이지 입니다!</h1>
+    <br>
+    <h3>화장품 조회 요청</h3>
+    <p>
+    <h5>*10,000원대 제품 목록 리스트를 보고싶으시면 아래 버튼을 눌러주세요!</h5>
+    <form name="frm" action="/findBysale_one" method="get">
+        <button name="btnFinAll" type="submit" id="btnFinone"><img src="C:\heejin\img\start.png"></button>
+    </form>
+    </p>
+    <p>
+    <h5>*20,000원대 제품 목록 리스트를 보고싶으시면 아래 버튼을 눌러주세요!</h5>
+    <form name="frm" action="/findBysale_two" method="get">
+        <button name="btnFinAll" type="submit" id="btnFintwo"><img src="C:\heejin\img\start.png"></button>
+    </form>
+    </p>
+    <p>
+    <h5>*30,000원대 제품 목록 리스트를 보고싶으시면 아래 버튼을 눌러주세요!</h5>
+    <form name="frm" action="/findBysale_three" method="get">
+        <button name="btnFinAll" type="submit" id="btnFinthree"><img src="C:\heejin\img\start.png"></button>
+    </form>
+    </p>
+    <p>
+    <h5>*40,000원대 제품 목록 리스트를 보고싶으시면 아래 버튼을 눌러주세요!</h5>
+    <form name="frm" action="/findBysale_four" method="get">
+        <button name="btnFinAll" type="submit" id="btnFinfour"><img src="C:\heejin\img\start.png"></button>
+    </form>
+    </p>
+    <p>
+    <h5>*50,000원대 제품 목록 리스트를 보고싶으시면 아래 버튼을 눌러주세요!</h5>
+    <form name="frm" action="/findBysale_five" method="get">
+        <button name="btnFinAll" type="submit" id="btnFinfive"><img src="C:\heejin\img\start.png"></button>
+    </form>
+    </p>
+</center>
+</body>
+</html>

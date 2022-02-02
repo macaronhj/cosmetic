@@ -22,4 +22,19 @@ public class CosService {
     public List<CosmeticDto> findAll() {
         return cosMapper.findAll();
     }
+    public List<CosmeticDto> findBysale_one() {
+        return cosMapper.findBysale_one();
+    }
+    public List<CosmeticDto> findBysale_two() {
+        return cosMapper.findBysale_two();
+    }
+    public List<CosmeticDto> findBysale_three() {
+        return cosMapper.findBysale_three();
+    }
+    public List<CosmeticDto> findBysale_four() {
+        return cosMapper.findBysale_four();
+    }
+    public List<CosmeticDto> findBysale_five() {
+        return cosMapper.findBysale_five();
+    }
 }
