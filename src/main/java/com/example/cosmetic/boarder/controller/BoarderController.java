@@ -31,8 +31,8 @@ public class BoarderController {
     public ModelAndView registerRequest(ModelAndView mv, String name, int count, String company, Long sale) {
         log.info("BoarderController > registerRequest 사용자 등록 요청 시작");
 
-        mv.addObject("result", boarderService.registerRequest(name, count, company, sale));
-        mv.setViewName("/boarder/registerRequest.html");
+        mv.addObject("BoarderList", boarderService.registerRequest(name, count, company, sale));
+        mv.setViewName("/boarder/boarderView.html");
         return mv;
     }
 }
