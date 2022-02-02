@@ -16,7 +16,7 @@ create table STORE(
 create sequence SEQ increment by 1 start with 1 nocache;
 create sequence S_SEQ increment by 1 start with 1 nocache;
 
-insert into cosmetic values(SEQ.NEXTVAL,'튤립',30,'아모레',12000);
+insert into cosmetic values(SEQ.NEXTVAL,'TULIP',30,'아모레',12000);
 insert into cosmetic values(SEQ.NEXTVAL,'ROSE',48,'아모레',24000);
 insert into cosmetic values(SEQ.NEXTVAL,'SKY',491,'LG',32000);
 insert into cosmetic values(SEQ.NEXTVAL,'PPIPPI',30,'COCO',9800);

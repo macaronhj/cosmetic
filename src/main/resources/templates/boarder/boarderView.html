@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="ko"
+      xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <link href="/bootstrap/css/bootstrap.min.css" rel="stylesheet">
+    <link href="/css/cheatsheet.css" rel="stylesheet">
+</head>
+<script>
+    function goregisterpage(){
+        document.frm.submit();
+    }
+</script>
+<body>
+    <div class="bd-example">
+        <table class="table table-striped">
+            <h1>Cosmetic's Information</h1>
+            <tr>
+                <th>상품 번호</th>
+                <th>상품 이름</th>
+                <th>재고수</th>
+                <th>제조사</th>
+                <th>가격</th>
+            </tr>
+            <!-- tr th:each : 행 반복문을 수행하겠다는 의미입니다 [여러 데이터 출력] -->
+            <tr th:each="list : ${BoarderList}">
+                <td><span th:text="${list.seq}"></span></td>
+                <td><span th:text="${list.name}"></span></td>
+                <td><span th:text="${list.count}"></span></td>
+                <td><span th:text="${list.company}"></span></td>
+                <td><span th:text="${list.sale}"></span></td>
+            </tr>
+        </table>
+</div>
+    <h3>화장품 등록을 원하시면 아래 버튼을 눌러주세요~</h3>
+    <form name="frm" action="/boarderRequest" method="get">
+
+        <button class="btn btn-primary" type="button" onclick="goregisterpage();">글쓰기</button>
+    </form>
+
+<script src="/bootstrap/js/bootstrap.bundle.min.js"></script>
+<script src="/js/cheatsheet.js"></script>
+</body>
+</html>
