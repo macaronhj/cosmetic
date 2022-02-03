@@ -1,9 +1,9 @@
 create table COSMETIC(
      SEQ NUMBER(10) constraint C_CODE_PK primary key,
-     NAME VARCHAR2(14) constraint CNAME_NN not null,
-     COUNT NUMBER(4) constraint C_COUNT_NN not null,
-     COMPANY  VARCHAR2(14) constraint MCOM_NN not null,
-     SALE NUMBER(10)constraint MSALE_NN not null
+     NAME VARCHAR2(14),
+     COUNT NUMBER(4),
+     COMPANY  VARCHAR2(14),
+     SALE NUMBER(10)
 );
 
 create table STORE(

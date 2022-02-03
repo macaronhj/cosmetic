@@ -7,20 +7,16 @@
     <link href="/css/cheatsheet.css" rel="stylesheet">
 </head>
 <script>
-    function doupdate(seq){
-        const requsetUpdate =  document.requsetUpdate;
-        requsetUpdate.seq.value = seq;
-        requsetUpdate.submit();    }
+    function doupdate(){
+        document.requsetUpdate.submit();    }
 </script>
-<form name="requsetUpdate" method="post" action="/update2">
-    <input type="hidden" name="seq">
-</form>
 <body>
 <div>
     <div class="bd-example">
-        <form class="row g-3" name="frm" action="/registerRequest" method="post">
+        <form class="row g-3" name="requsetUpdate" method="post" action="/update2">
+            <input type="hidden" name="seq">
             <div class="col-md-4">
-                <label for="validationServer01" class="form-label">NUMBER</label>
+                <label for="validationServer01" class="form-label">MEMBER'S NUMBER</label>
                 <input type="text" class="form-control is-valid" name="seq" id="validationServer00" th:value="${seq}" disabled>
 
                 <div class="valid-feedback">
@@ -57,7 +53,7 @@
                 </div>
             </div>
             <div class="col-12">
-                <button class="btn btn-primary" type="button" th:onclick="|doupdate(${seq})|">수정</button>            </div>
+                <button class="btn btn-primary" type="button" onclick="doupdate();">수정</button>            </div>
         </form>
     </div>
 </div>
