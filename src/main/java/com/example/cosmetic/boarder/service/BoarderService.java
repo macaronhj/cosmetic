@@ -41,14 +41,15 @@ public class BoarderService {
     public BoarderDto update1(Long seq){
         return boarderMapper.update1(seq);
     }
-    public int update2(Long seq){
-        int result = boarderMapper.update2(seq);
+
+    public int update2(Long seq, String name, Long count, String company ,Long sale){
+        int result = boarderMapper.update2(seq, name, count, company, sale);
         String registerResultU = "update fail";
 
         if(result>0){
             registerResultU = "update success";
             log.info("[BoarderService > updateUser 사용자 수정 요청 성공]");
         }
-        return boarderMapper.update2(seq);
+        return boarderMapper.update2(seq, name, count, company, sale);
     }
 }

@@ -46,10 +46,11 @@ public class BoarderController {
         mv.setViewName("/boarder/boarderView.html");
         return mv;
     }
-    @PostMapping(value = "/update1")
+    @GetMapping(value = "/update1")
     public ModelAndView update1(ModelAndView mv, Long seq){
         BoarderDto boarderDto = boarderService.update1(seq);
         log.info("[BoarderController > update 사용자 수정 요청 시작]");
+        mv.addObject("seq", boarderDto.getSeq());
         mv.addObject("name", boarderDto.getName());
         mv.addObject("count", boarderDto.getCount());
         mv.addObject("company", boarderDto.getCompany());
@@ -59,9 +60,9 @@ public class BoarderController {
     }
 
     @PostMapping(value = "/update2")
-    public ModelAndView update2(ModelAndView mv, Long seq){
-        log.info("[BoarderController > update 사용자 수정 요청 시작]");
-        mv.addObject("BoarderList" , boarderService.update2(seq));
+    public ModelAndView update2(ModelAndView mv, Long seq, String name, Long count, String company, Long sale){
+        log.info("[BoarderController > update2 사용자 수정 요청 시작]");
+        mv.addObject("BoarderList" , boarderService.update2(seq, name, count, company, sale));
         mv.setViewName("/boarder/boarderView.html");
         return mv;
     }

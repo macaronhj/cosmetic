@@ -18,6 +18,6 @@ public interface BoarderMapper {
     @Select("SELECT * FROM COSMETIC where seq = #{seq}")
     BoarderDto update1(Long seq);
 
-    @Update("UPDATE COSMETIC SET NAME=#{name}, COUNT=#{COUNT}, COMPANY=#{company}, SALE=#{sale} WHERE seq = #{seq}")
-    int update2(Long seq);
+    @Update("UPDATE COSMETIC SET NAME=#{name}, COUNT=#{count}, COMPANY=#{company}, SALE=#{sale} WHERE seq = #{seq}")
+    int update2(Long seq, String name, Long count, String company ,Long sale);
 }
