@@ -10,13 +10,25 @@
 </head>
 <script>
     function goregisterpage(){
-        document.frm.submit();
+        window.location.href = 'http://localhost:8082/boarderRequest';    }
+    function deleteBoarder(seq){
+        const requsetDelete =  document.requsetDelete;
+        requsetDelete.seq.value = seq;
+        requsetDelete.submit();
     }
-    function goregisterpage(){
-        document.frm.submit();
+    function updateBoarder(seq){
+        const requsetUpdate =  document.requsetUpdate;
+        requsetUpdate.seq.value = seq;
+        requsetUpdate.submit();
     }
 </script>
 <body>
+<form name="requsetDelete" method="post" action="/delete">
+    <input type="hidden" name="seq">
+</form>
+<form name="requsetUpdate" method="post" action="/update1">
+    <input type="hidden" name="seq">
+</form>
     <div class="bd-example">
         <table class="table table-striped">
             <h1>Cosmetic's Information</h1>
@@ -26,7 +38,8 @@
                 <th>재고수</th>
                 <th>제조사</th>
                 <th>가격</th>
-                <th>삭제 유무</th>
+                <th>수정</th>
+                <th>삭제</th>
             </tr>
             <!-- tr th:each : 행 반복문을 수행하겠다는 의미입니다 [여러 데이터 출력] -->
             <tr th:each="list : ${BoarderList}">
@@ -35,7 +48,8 @@
                 <td><span th:text="${list.count}"></span></td>
                 <td><span th:text="${list.company}"></span></td>
                 <td><span th:text="${list.sale}"></span></td>
-                <td><button class="btn btn-primary" type="button" th:onclick="${list.seq}">삭제</button>
+                <td><button class="btn btn-primary" type="button" th:onclick="|updateBoarder(${list.seq})|">수정</button>
+                <td><button class="btn btn-primary" type="button" th:onclick="|deleteBoarder(${list.seq})|">삭제</button>
                 </td>
             </tr>
         </table>

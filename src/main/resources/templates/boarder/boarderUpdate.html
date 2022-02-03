@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <link href="/bootstrap/css/bootstrap.min.css" rel="stylesheet">
+    <link href="/css/cheatsheet.css" rel="stylesheet">
+</head>
+<script>
+    // function doupdate(){
+    //     window.location.href = 'http://localhost:8082/update2';    }
+    function doupdate(){
+        let f = document.createElement('form');
+        f.setAttribute('method', 'post');
+        f.setAttribute('action', 'goPost.do');
+        document.body.appendChild(f);
+        f.submit();
+    }
+
+</script>
+<body>
+<div>
+    <div class="bd-example">
+        <form class="row g-3" name="frm" action="/registerRequest" method="post">
+            <div class="col-md-4">
+                <label for="validationServer01" class="form-label">NAME</label>
+                <input type="text" class="form-control is-valid" name="name" id="validationServer01" th:text="${name}" required>
+
+                <div class="valid-feedback">
+                    Looks good!
+                </div>
+            </div>
+            <div class="col-md-4">
+                <label for="validationServer02" class="form-label">COUNT</label>
+                <input type="text" class="form-control is-valid" name="count" id="validationServer02" th:text="${count}" required>
+                <div class="valid-feedback">
+                    Looks good!
+                </div>
+            </div>
+            <div class="col-md-4">
+                <label for="validationServerUsername" class="form-label">COMPANY</label>
+                <input type="text" class="form-control is-invalid" name="company" id="validationServerUsername" th:text="${company}" aria-describedby="inputGroupPrepend3" required>
+                <div class="invalid-feedback">
+                    Please write a company.
+                </div>
+            </div>
+            <div class="col-md-6">
+                <label for="validationServer03" class="form-label">SALE</label>
+                <input type="text" class="form-control is-invalid" name="sale" id="validationServer03"  th:text="${sale}" required>
+                <div class="invalid-feedback">
+                    Please write a cosmetic's sale.
+                </div>
+            </div>
+            <div class="col-12">
+                <a href="javascript:void(0)" onClick="javascript:update2()">클릭시 POST로 페이지 </a>
+<!--                <form name="frm" action="/update2" method="post">-->
+<!--                    <button class="btn btn-primary" type="button" onclick="doupdate();">수정하기</button>-->
+<!--                </form>-->
+            </div>
+        </form>
+    </div>
+</div>
+<script src="/bootstrap/js/bootstrap.bundle.min.js"></script>
+<script src="/js/cheatsheet.js"></script>
+</body>
+</html>
