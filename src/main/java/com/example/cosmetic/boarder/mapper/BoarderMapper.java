@@ -10,7 +10,7 @@ public interface BoarderMapper {
     List<BoarderDto> boarder();
 
     @Insert("INSERT INTO COSMETIC(SEQ, NAME, COUNT, COMPANY, SALE) VALUES (SEQ.NEXTVAL,#{name},#{count},#{company},#{sale})")
-    int registerRequest(String name, int count, String company, Long sale);
+    int registerRequest(BoarderDto boardDto);
 
     @Delete("DELETE FROM COSMETIC WHERE seq = #{seq}")
     int delete(Long seq);
@@ -19,5 +19,5 @@ public interface BoarderMapper {
     BoarderDto update1(Long seq);
 
     @Update("UPDATE COSMETIC SET NAME=#{name}, COUNT=#{count}, COMPANY=#{company}, SALE=#{sale} WHERE seq = #{seq}")
-    int update2(Long seq, String name, Long count, String company ,Long sale);
+    int update2(BoarderDto boardDto);
 }

@@ -32,10 +32,10 @@ public class BoarderController {
         return mv;
     }
     @PostMapping(value = "/registerRequest")
-    public ModelAndView registerRequest(ModelAndView mv, String name, int count, String company, Long sale) {
+    public ModelAndView registerRequest(BoarderDto boardDto, ModelAndView mv) {
         log.info("BoarderController > registerRequest 사용자 등록 요청 시작");
 
-        mv.addObject("BoarderList", boarderService.registerRequest(name, count, company, sale));
+        mv.addObject("BoarderList", boarderService.registerRequest(boardDto));
         mv.setViewName("/boarder/boarderView.html");
         return mv;
     }
@@ -60,10 +60,12 @@ public class BoarderController {
     }
 
     @PostMapping(value = "/update2")
-    public ModelAndView update2(ModelAndView mv, Long seq, String name, Long count, String company, Long sale){
+    public ModelAndView update2(BoarderDto boardDto, ModelAndView mv){
         log.info("[BoarderController > update2 사용자 수정 요청 시작]");
-        mv.addObject("BoarderList" , boarderService.update2(seq, name, count, company, sale));
-        mv.setViewName("/boarder/boarderView.html");
+        log.info(boardDto.getName());
+        log.info(boardDto.getCompany());
+        mv.addObject("BoarderList" , boarderService.update2(boardDto));
+        mv.setViewName("redirect:/boarder");
         return mv;
     }
 }

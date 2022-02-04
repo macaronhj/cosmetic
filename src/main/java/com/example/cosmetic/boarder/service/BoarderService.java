@@ -18,8 +18,8 @@ public class BoarderService {
         return boarderMapper.boarder();
     }
 
-    public List<BoarderDto> registerRequest(String name, int count, String company ,Long sale) {
-        int result = boarderMapper.registerRequest(name, count, company, sale);
+    public List<BoarderDto> registerRequest(BoarderDto boardDto) {
+        int result = boarderMapper.registerRequest(boardDto);
         String registerResult = "화장품 등록 실패";
 
         if (result > 0) {
@@ -42,14 +42,17 @@ public class BoarderService {
         return boarderMapper.update1(seq);
     }
 
-    public int update2(Long seq, String name, Long count, String company ,Long sale){
-        int result = boarderMapper.update2(seq, name, count, company, sale);
+    public List<BoarderDto> update2(BoarderDto boardDto){
+        log.info("[BoarderService > updateU2 사용자 수정 시도]");
+        int result = boarderMapper.update2(boardDto);
+        log.info("[BoarderService > updateU2 사용자 수정 시도2]");
         String registerResultU = "update fail";
 
         if(result>0){
             registerResultU = "update success";
-            log.info("[BoarderService > updateUser 사용자 수정 요청 성공]");
         }
-        return boarderMapper.update2(seq, name, count, company, sale);
+        log.info(registerResultU);
+        log.info("[BoarderService > updateU2 사용자 수정 시도3]");
+        return boarderMapper.boarder();
     }
 }
