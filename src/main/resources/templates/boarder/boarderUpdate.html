@@ -14,7 +14,7 @@
 <div>
     <div class="bd-example">
         <form class="row g-3" name="requsetUpdate" method="post" action="/update2">
-            <input type="text" name="seq" th:value="${seq}">
+            <input type="hidden" name="seq" th:value="${seq}">
             <div class="col-md-4">
                 <label for="validationServer01" class="form-label">MEMBER'S NUMBER</label>
                 <input type="text" class="form-control is-valid" name="seq" id="validationServer00" th:value="${seq}" disabled>
